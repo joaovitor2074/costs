@@ -1,0 +1,25 @@
+/* container.module.css */
+
+.Container {
+  max-width: 1200px;     /* largura máxima */
+  margin: 0 auto;        /* centraliza no meio da tela */
+  padding: 1rem;         /* espaçamento interno */
+  display: flex;         /* flexível para organizar elementos */
+  flex-direction: column; /* por padrão organiza em coluna */
+  gap: 1rem;             /* espaçamento entre filhos */
+  background-color: #fff; /* fundo branco, pode trocar */
+  border-radius: 12px;   /* cantos arredondados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra suave */
+}
+
+.min-height{
+    min-height: 75%;
+}
+.start{
+    justify-content: flex-start;
+}
+
+.column{
+    flex-direction: column;
+    justify-content: flex-start;
+}
