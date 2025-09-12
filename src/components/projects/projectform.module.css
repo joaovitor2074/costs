@@ -1,0 +1,43 @@
+/* container.module.css - apenas CSS para formulário */
+.Form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.Input {
+
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.BtnPrimary {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.BtnPrimary--blue {
+  background-color: #3890f5;
+  color: #fff;
+}
+
+.BtnPrimary--blue:hover {
+  background-color: #3890f5;
+  transform: translateY(-2px);
+}

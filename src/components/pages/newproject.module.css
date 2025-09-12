@@ -1,0 +1,129 @@
+/* container.module.css */
+.Container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 24px;
+box-sizing: border-box;
+text-align: center;
+}
+
+.Input{
+    width: 300px;
+    display: block;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #666;
+}
+
+.Header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 16px;
+padding: 16px 0;
+text-align: center;
+}
+
+
+.Nav {
+display: flex;
+gap: 12px;
+align-items: center;
+text-align: center;
+}
+
+
+.NavLink {
+text-decoration: none;
+font-weight: 600;
+padding: 8px 12px;
+border-radius: 8px;
+transition: background-color 0.18s ease, transform 0.12s ease;
+}
+
+
+.NavLink:hover {
+transform: translateY(-2px);
+}
+h2{
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+
+}
+.titulo{
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+}
+.Hero {
+display: grid;
+grid-template-columns: 1fr;
+gap: 18px;
+align-items: center;
+padding: 28px 0;
+text-align: center;
+}
+
+
+.HeroTitle {
+font-size: 2.1rem;
+margin: 0 0 8px 0;
+line-height: 1.05;
+}
+
+
+.HeroSubtitle {
+margin: 0;
+color: #666;
+}
+
+p{
+    text-align: center;
+    font-family: sans-serif;
+
+}
+.BtnPrimary {
+display: flex;
+padding: 10px 18px;
+border-radius: 10px;
+font-weight: 700;
+cursor: pointer;
+border: none;
+margin: 0 auto;
+
+}
+
+
+.BtnPrimary--blue {
+background-color: #4068ec;
+color: #fff;
+}
+.BtnPrimary--blue:hover {
+background-color: #1345e9;
+transition: linear 0.5;
+color: #fff;
+}
+
+
+.BtnSecondary {
+background: transparent;
+color: #c62828;
+border: 2px solid #eee;
+}
+
+
+.Grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+gap: 16px;
+margin-top: 18px;
+}
+
+
+.Card {
+border-radius: 10px;
+padding: 12px;
+box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}

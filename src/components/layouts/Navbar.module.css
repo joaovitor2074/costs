@@ -1,0 +1,85 @@
+/* Navbar.module.css */
+
+/* container externo do navbar */
+.navbar {
+  width: 100%;
+  background: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(4px); /* leve desfoque pra ficar moderno */
+}
+
+/* área interna (o Container faz a largura máxima e centraliza) */
+.navbarInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+}
+
+/* logo */
+.logo {
+  display: inline-block;
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* lista de links */
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* item da lista (ajuste de clique) */
+.navItem a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.98rem;
+  color: #0a3f9b; /* tom de azul principal */
+  padding: 0.25rem 0.35rem;
+  border-radius: 6px;
+  transition: all 160ms ease;
+}
+
+/* hover / foco */
+.navItem a:hover,
+.navItem a:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(10,63,155,0.08);
+  background: rgba(10,63,155,0.06);
+}
+
+/* link ativo (se quiser usar uma classe active) */
+.navItem a.active {
+  color: #0440d6;
+  border-bottom: 2px solid #0440d6;
+  padding-bottom: 0.15rem;
+}
+
+/* small screens: empilha e reduz espaço */
+@media (max-width: 768px) {
+  .navbarInner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+
+  .navList {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .logo {
+    height: 42px;
+    align-self: center;
+  }
+}

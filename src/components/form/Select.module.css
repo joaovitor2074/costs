@@ -1,0 +1,42 @@
+.input_container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+
+.label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: #1a237e; /* Azul escuro elegante */
+}
+
+
+.select {
+  padding: 0.7rem 1rem;
+  border: 2px solid #2196f3; /* Azul principal */
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #0d47a1; /* Azul forte para o texto */
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+
+.select:hover {
+  border-color: #1565c0;
+}
+
+
+.select:focus {
+  border-color: #1565c0;
+  box-shadow: 0 0 6px rgba(33, 150, 243, 0.6);
+}
+
+
+.select option {
+  color: #0d47a1;
+}
