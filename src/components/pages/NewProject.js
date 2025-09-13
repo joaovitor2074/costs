@@ -1,28 +1,38 @@
-import React, { useState } from 'react';
-import Container from '../layouts/container';
-import styles from './newproject.module.css';
-import ProjectForm from '../projects/ProjectForm';
-
+import { useNavigate } from 'react-router-dom'
+import Container from '../layouts/container'
+import ProjectForm from '../projects/ProjectForm'
 
 export default function NewProject() {
-    const [name, setName] = useState('');
-    const [price, setPrice] = useState('');
+  const navigate = useNavigate()
 
+  function createPost(project) {
+    // inicializa custos e serviços
+    project.cost = 0
+    project.services = []
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        // lógica de envio (ex: chamada ao backend)
-        console.log({ name, price });
-        setName('');
-        setPrice('');
-    }
+    fetch('http://localhost:5000/projects', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(project),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log('Projeto criado:', data)
+        // redireciona com mensagem
+        navigate('/projects', {
+          state: { message: 'Projeto criado com sucesso!' },
+        })
+      })
+      .catch((err) => console.log(err))
+  }
 
-
-    return (
-        <Container>
-            <h2 className="titulo">Criar Projeto</h2>
-            <p>Crie seu projeto para depois adicionar os servicos</p>
-            <ProjectForm btnText="criar projeto"/>
-        </Container>
-    )
+  return (
+    <Container>
+      <h2 className="titulo">Criar Projeto</h2>
+      <p>Crie seu projeto para depois adicionar os serviços</p>
+      <ProjectForm handleSubmit={createPost} btnText="Criar projeto" />
+    </Container>
+  )
 }

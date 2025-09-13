@@ -12,7 +12,7 @@ function Input({ type, text, name, placeholder, handleOnChange, value }) {
         id={name}
         placeholder={placeholder}
         onChange={handleOnChange}
-        value={value}
+        value={value||""}
         className={styles.input}
       />
     </div>

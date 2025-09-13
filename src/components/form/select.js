@@ -10,7 +10,7 @@ function Select({ text, name, options, handleOnChange, value }) {
         name={name}
         id={name}
         onChange={handleOnChange}
-        value={value}
+        value={value || ""}
         className={styles.select}
       >
         <option value="">Selecione uma opção</option>

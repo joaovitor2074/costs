@@ -9,8 +9,8 @@ function Home() {
         bem vindo ao <span>JV Dev</span>
       </h1>
       <p className={styles.text}>Veja meus Projetos e se divirta</p>
-      <LinkButton to="/newproject" text="criar Projeto"/>
-      <img src={saving} alt="Costs" className={styles.image}/>
+      <LinkButton to="/newproject" text="criar Projeto" />
+      <img src={saving} alt="Costs" className={styles.image} />
     </section>
   )
 }
