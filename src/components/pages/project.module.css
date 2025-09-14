@@ -1,0 +1,58 @@
+.project_container {
+  background: #f9fbfd;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.project_header {
+  display: flex;
+  flex-direction: column; /* <-- empilha título e botão */
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.project_header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 1rem; /* espaço pro botão */
+}
+
+.project_button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+}
+
+.project_button:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.project_details {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.project_details p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  color: #374151;
+}
+
+.project_details span {
+  font-weight: 600;
+  color: #1e40af;
+}
