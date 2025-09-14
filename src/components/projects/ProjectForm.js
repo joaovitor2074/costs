@@ -6,60 +6,73 @@ import SubmitButton from "../form/submitButton";
 
 function ProjectForm({ handleSubmit, btnText, projectData }) {
   const [categories, setCategories] = useState([]);
-  const [project, setProject] = useState(projectData || {})
-
-
+  const [project, setProject] = useState(projectData || {});
+  const [error, setError] = useState(""); // <-- mensagem de erro
 
   useEffect(() => {
     fetch("http://localhost:5000/categories", {
       method: "GET",
       headers: {
-        "Content-Type": "application/json"
-      }
+        "Content-Type": "application/json",
+      },
     })
       .then((resp) => resp.json())
       .then((data) => {
-        // transforma o formato {id, name} -> {value, label}
         const formattedCategories = data.map((cat) => ({
           value: cat.id,
-          label: cat.name
+          label: cat.name,
         }));
         setCategories(formattedCategories);
       })
       .catch((err) => console.log(err));
   }, []);
 
-
   const submit = (e) => {
-    e.preventDefault()
-    console.log(project)
-    handleSubmit(project)
+    e.preventDefault();
+
+    // validações
+    if (!project.name || project.name.trim() === "") {
+      setError("O nome do projeto é obrigatório.");
+      return;
+    }
+    if (!project.budget || project.budget <= 0) {
+      setError("O orçamento deve ser maior que zero.");
+      return;
+    }
+    if (!project.category || !project.category.id) {
+      setError("Selecione uma categoria.");
+      return;
+    }
+
+    setError(""); // limpa erro
+    handleSubmit(project); // envia para o pai
+  };
+
+  function handleChange(e) {
+    setProject({ ...project, [e.target.name]: e.target.value });
   }
 
-function handleChange(e) {
-  setProject({ ...project, [e.target.name]: e.target.value })
-}
-
-function handleCategory(e) {
-  setProject({
-    ...project,
-    category: {
-      id: e.target.value,
-      name: e.target.options[e.target.selectedIndex].text,
-    },
-  })
-}
-
+  function handleCategory(e) {
+    setProject({
+      ...project,
+      category: {
+        id: e.target.value,
+        name: e.target.options[e.target.selectedIndex].text,
+      },
+    });
+  }
 
   return (
     <form onSubmit={submit} className={styles.Form}>
+      {error && <p className={styles.error}>{error}</p>} {/* mostra erro */}
+
       <Input
         type="text"
         text="Nome do Projeto"
         name="name"
         handleOnChange={handleChange}
         placeholder="Insira o nome do projeto"
-        value={project.name}
+        value={project.name || ""}
       />
 
       <Input
@@ -68,15 +81,15 @@ function handleCategory(e) {
         name="budget"
         handleOnChange={handleChange}
         placeholder="Insira o orçamento total"
-        value={project.budget}
+        value={project.budget || ""}
       />
 
-      <Select 
+      <Select
         name="category_id"
         text="Selecione uma categoria"
         options={categories}
-        handleOnChange={handleCategory} 
-        value={project.category?project.category.id:""}  // agora está no formato certo
+        handleOnChange={handleCategory}
+        value={project.category ? project.category.id : ""}
       />
 
       <SubmitButton text={btnText} />

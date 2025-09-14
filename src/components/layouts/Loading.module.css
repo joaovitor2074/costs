@@ -1,0 +1,32 @@
+.loader_contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  width: 120px;
+  /* background: linear-gradient(135deg, #0a192f, #112d4e); */
+  margin: 0 auto;
+  border-radius: 30px;
+}
+
+/* spinner circular com glow azul */
+.loader {
+  width: 64px;
+  height: 64px;
+  border: 6px solid rgba(86, 151, 255, 0.18);
+  border-top-color: #357ae7;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  box-shadow: 0 0 18px rgba(58,134,255,0.35);
+  display: inline-block;
+  will-change: transform;
+  -webkit-animation: spin 0.9s linear infinite;
+}
+
+/* keyframes */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}

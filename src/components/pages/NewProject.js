@@ -19,7 +19,7 @@ export default function NewProject() {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        console.log('Projeto criado:', data)
+        
         // redireciona com mensagem
         navigate('/projects', {
           state: { message: 'Projeto criado com sucesso!' },

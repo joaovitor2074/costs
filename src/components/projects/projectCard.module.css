@@ -1,0 +1,75 @@
+/* estilos gerais do card */
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: .5rem;
+  color: #333;
+}
+
+.info {
+  margin: .3rem 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 10px;
+}
+
+.edit, .remove {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  
+}
+
+.edit {
+  background: #3498db;
+  color: rgb(255, 255, 255);
+}
+
+.remove {
+  background: #e74c3c;
+  color: white;
+}
+
+/* Categoria com bolinha colorida */
+.category {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.categoryDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Cores diferentes para categorias */
+.categoryPlanejamento { background-color: #2563eb; }   /* azul */
+.categoryDesenvolvimento { background-color: #16a34a; }    /* verde */
+.categoryDesign { background-color: #f59e0b; }  /* laranja */
+.categoryInfra { background-color: #d946ef; }     /* roxo */
